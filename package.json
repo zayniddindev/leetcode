@@ -7,7 +7,12 @@
     "prebuild": "rimraf dist",
     "build": "tsc",
     "watch": "tsc --watch",
+    "dev": "echo $npm_config_dir/index",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "workspaces": ["./ts"],
+  "config": {
+    "dir": ""
   },
   "keywords": [],
   "author": "",
