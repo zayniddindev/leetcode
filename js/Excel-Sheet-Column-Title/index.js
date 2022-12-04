@@ -3,22 +3,20 @@
  * @return {string}
  */
 var convertToTitle = function (columnNumber) {
-  let start = 64;
-  const count = p26(columnNumber);
-  return String.fromCharCode(start + 26);
+  let nums = [null, ...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'], res = '';
+  while (columnNumber > 26) {
+    res += nums[columnNumber % 26];
+    columnNumber 
+  }
+  return res
 };
 
-function p26(n) {
-  let count = 0;
-  while (n >= 26) {
-    n -= 26;
-    count++;
-  }
-  return [count, n];
-}
-
-console.log(p26(7474747));
 console.log(convertToTitle(1));
+console.log(convertToTitle(2));
+console.log(convertToTitle(11));
+console.log(convertToTitle(27));
+console.log(convertToTitle(111));
+
 /**
  * 1 - A
  *
@@ -32,3 +30,5 @@ console.log(convertToTitle(1));
  * 52 -> AZ
  * 53 => BA
  */
+
+// A * 26 ^ n + B * 26 ^ n-1 + C
